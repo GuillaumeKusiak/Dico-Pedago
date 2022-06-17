@@ -23,12 +23,8 @@ Pour lancer l'application via un IDE lancer simplement le fichier Main.java, et 
 ```java
 public class Main extends Application {
 ```
-L'application fonctionne avec une base de données `PostgreSQL`. Voici les différentes chaine de connexion si besoin est :
-```java
-private static final String CONNECT_URL = "jdbc:postgresql://kesavan.db.elephantsql.com/cssqfxzf";
-private static final String LOGIN = "cssqfxzf";
-private static final String PASSWORD = "M6crtbHWKBQW0Cl7iXPIQeLmuCaeDMdj";
-```
+L'application fonctionne avec une base de données `PostgreSQL`.
+
 Application fonctionnelle sur : 
 
 ![Mac OS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
@@ -41,34 +37,24 @@ Exécutables MacOS et Windows (.app et .exe) disponibles en cliquant sur le bout
 
 [![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://drive.google.com/uc?export=download&id=1wkvOfPdMITRaNcSzXUQIO00jtylAWhlq)
 
-## Mode administrateur
-
-Nous avons aussi un mode administrateur sur notre application, pour modifier les données présentes dans la base de données, voici les chaines de connexions :
-
-IDENTIFIANT : 
-```
-DicoPedago-Admin
-```
-
-MOT DE PASSE : 
-```
-Joindre Tenir Crocodile Droit Veuve Immersion Vote Amerique Fils Authentique
-```
-
 ## Auteurs 🌟
 Il y a 7 collaborateurs pour ce projet.
-- Autant Félix
-- Badjoudj Hana
+
+`Frontend`
 - Egenscheviller Fréderic
-- Gonzales Lenny
-- Kusiak Guillaume
 - Metayer Sloane
 - Sauva Mathieu
+
 <img align="left" src="https://avatars.githubusercontent.com/u/53983944?s=64&v=4" alt="profile" width="40" height="40"/>
-<img align="left" src="https://avatars.githubusercontent.com/u/91054044?s=64&v=4" alt="profile" width="40" height="40"/>
-<img align="left" src="https://avatars.githubusercontent.com/u/91269114?s=64&v=4" alt="profile" width="40" height="40"/>
 <img align="left" src="https://avatars.githubusercontent.com/u/91150750?s=64&v=4" alt="profile" width="40" height="40"/>
 <img src="https://avatars.githubusercontent.com/u/91048574?s=64&v=4" alt="profile" width="40" height="40"/>
+
+`Backend`
+- Gonzales Lenny
+- Kusiak Guillaume
+
+<img align="left" src="https://avatars.githubusercontent.com/u/91054044?s=64&v=4" alt="profile" width="40" height="40"/>
+<img src="https://avatars.githubusercontent.com/u/91269114?s=64&v=4" alt="profile" width="40" height="40"/>
 
 ## License
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
