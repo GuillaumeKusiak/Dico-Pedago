@@ -15,9 +15,6 @@ valeur quand il y a des impératifs d’immédiateté graves.
 Pour répondre à ce besoin, les équipes de la DNE souhaite développer une application de cartographie de ces
 usages.
 
-## Team Github : `G2D`
-
-
 ## Démarrage
 Pour lancer l'application via un IDE lancer simplement le fichier Main.java, et exécuter cette ligne
 ```java
