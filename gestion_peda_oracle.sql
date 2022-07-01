@@ -1,82 +1,86 @@
--- PROMPT Droping Table ETUDIANT
-  DROP TABLE IF EXISTS ETUDIANT;
--- PROMPT Droping Table PROF
-  DROP TABLE IF EXISTS PROF;
--- PROMPT Droping Table MODULE
-  DROP TABLE IF EXISTS MODULE;
--- PROMPT Droping Table ENSEIGNT
-  DROP TABLE IF EXISTS ENSEIGNT;
--- PROMPT Droping Table NOTATION
-  DROP TABLE IF EXISTS NOTATION;
---
+SET FEEDBACK OFF TRIM ON;
+--------------------------------------------------------
+--  Fichier créé - jeudi-septembre-16-2010   
+--------------------------------------------------------
+PROMPT Droping Table "ETUDIANT"
+  DROP TABLE "ETUDIANT" cascade constraints;
+PROMPT Droping Table "PROF"
+  DROP TABLE "PROF" cascade constraints;
+PROMPT Droping Table "MODULE"
+  DROP TABLE "MODULE" cascade constraints;
+PROMPT Droping Table "ENSEIGNT"
+  DROP TABLE "ENSEIGNT" cascade constraints;
+PROMPT Droping Table "NOTATION"
+  DROP TABLE "NOTATION" cascade constraints;
+--------------------------------------------------------
 --  DDL for Table ETUDIANT
---
--- PROMPT Creating Table ETUDIANT 
-  CREATE TABLE ETUDIANT 
-   (	NUM_ET DECIMAL(6,0), 
-	NOM_ET VARCHAR(20), 
-	PRENOM_ET VARCHAR(15), 
-	CP_ET VARCHAR(5), 
-	VILLE_ET VARCHAR(20), 
-	ANNEE DECIMAL(2,0), 
-	GROUPE DECIMAL(1,0)
+--------------------------------------------------------
+PROMPT Creating Table "ETUDIANT" 
+  CREATE TABLE "ETUDIANT" 
+   (	"NUM_ET" NUMBER(6,0), 
+	"NOM_ET" VARCHAR2(20), 
+	"PRENOM_ET" VARCHAR2(15), 
+	"CP_ET" VARCHAR2(5), 
+	"VILLE_ET" VARCHAR2(20), 
+	"ANNEE" NUMBER(2,0), 
+	"GROUPE" NUMBER(1,0)
    ) ;
    
---
+--------------------------------------------------------
 --  DDL for Table PROF
---
--- PROMPT Creating Table PROF 
-  CREATE TABLE PROF 
-   (	NUM_PROF DECIMAL(3,0), 
-	NOM_PROF VARCHAR(30), 
-	PRENOM_PROF VARCHAR(20), 
-	ADR_PROF VARCHAR(40), 
-	CP_PROF VARCHAR(5), 
-	VILLE_PROF VARCHAR(30), 
-	MAT_SPEC VARCHAR(7)
+--------------------------------------------------------
+PROMPT Creating Table "PROF" 
+  CREATE TABLE "PROF" 
+   (	"NUM_PROF" NUMBER(3,0), 
+	"NOM_PROF" VARCHAR2(30), 
+	"PRENOM_PROF" VARCHAR2(20), 
+	"ADR_PROF" VARCHAR2(40), 
+	"CP_PROF" VARCHAR2(5), 
+	"VILLE_PROF" VARCHAR2(30), 
+	"MAT_SPEC" VARCHAR2(7)
    ) ;
---
+--------------------------------------------------------
 --  DDL for Table MODULE
---
--- -- PROMPT Creating Table MODULE 
-  CREATE TABLE MODULE 
-   (	CODE VARCHAR(7), 
-	LIBELLE VARCHAR(30), 
-	H_COURS_PREV DECIMAL(3,0), 
-	H_COURS_REA DECIMAL(3,0), 
-	H_TP_PREV DECIMAL(3,0), 
-	H_TP_REA DECIMAL(3,0), 
-	DISCIPLINE VARCHAR(15), 
-	COEFF_TEST DECIMAL(3,0), 
-	COEFF_CC DECIMAL(3,0), 
-	RESP DECIMAL(3,0), 
-	CODEPERE VARCHAR(7)
+--------------------------------------------------------
+PROMPT Creating Table "MODULE" 
+  CREATE TABLE "MODULE" 
+   (	"CODE" VARCHAR2(7), 
+	"LIBELLE" VARCHAR2(30), 
+	"H_COURS_PREV" NUMBER(3,0), 
+	"H_COURS_REA" NUMBER(3,0), 
+	"H_TP_PREV" NUMBER(3,0), 
+	"H_TP_REA" NUMBER(3,0), 
+	"DISCIPLINE" VARCHAR2(15), 
+	"COEFF_TEST" NUMBER(3,0), 
+	"COEFF_CC" NUMBER(3,0), 
+	"RESP" NUMBER(3,0), 
+	"CODEPERE" VARCHAR2(7)
    ) ;
---
+--------------------------------------------------------
 --  DDL for Table ENSEIGNT
---
--- -- PROMPT Creating Table ENSEIGNT 
-  CREATE TABLE ENSEIGNT 
-   (	CODE VARCHAR(7), 
-	NUM_PROF DECIMAL(3,0), 
-	NUM_ET DECIMAL(6,0)
+--------------------------------------------------------
+PROMPT Creating Table "ENSEIGNT" 
+  CREATE TABLE "ENSEIGNT" 
+   (	"CODE" VARCHAR2(7), 
+	"NUM_PROF" NUMBER(3,0), 
+	"NUM_ET" NUMBER(6,0)
    ) ;
---
+--------------------------------------------------------
 --  DDL for Table NOTATION
---
--- -- PROMPT Creating Table NOTATION 
-  CREATE TABLE NOTATION 
-   (	NUM_ET DECIMAL(6,0), 
-	CODE VARCHAR(7), 
-	MOY_CC DECIMAL(2,0), 
-	MOY_TEST DECIMAL(2,0)
+--------------------------------------------------------
+PROMPT Creating Table "NOTATION" 
+  CREATE TABLE "NOTATION" 
+   (	"NUM_ET" NUMBER(6,0), 
+	"CODE" VARCHAR2(7), 
+	"MOY_CC" NUMBER(2,0), 
+	"MOY_TEST" NUMBER(2,0)
    ) ;
 
---
+---------------------------------------------------
 --   DATA FOR TABLE ENSEIGNT
 --   FILTER = none used
---
--- PROMPT Inserting into ENSEIGNT
+---------------------------------------------------
+PROMPT Inserting into ENSEIGNT
 Insert into ENSEIGNT (CODE,NUM_PROF,NUM_ET) values ('ACSI',1,2101);
 Insert into ENSEIGNT (CODE,NUM_PROF,NUM_ET) values ('ACSI',1,2102);
 Insert into ENSEIGNT (CODE,NUM_PROF,NUM_ET) values ('ACSI',1,2404);
@@ -199,15 +203,15 @@ Insert into ENSEIGNT (CODE,NUM_PROF,NUM_ET) values ('SYS',5,2404);
 Insert into ENSEIGNT (CODE,NUM_PROF,NUM_ET) values ('SYS',7,2317);
 Insert into ENSEIGNT (CODE,NUM_PROF,NUM_ET) values ('SYS',15,2317);
 
---
+---------------------------------------------------
 --   END DATA FOR TABLE ENSEIGNT
---
+---------------------------------------------------
 
---
+---------------------------------------------------
 --   DATA FOR TABLE MODULE
 --   FILTER = none used
---
--- PROMPT Inserting into MODULE
+---------------------------------------------------
+PROMPT Inserting into MODULE
 Insert into MODULE (CODE,LIBELLE,H_COURS_PREV,H_COURS_REA,H_TP_PREV,H_TP_REA,DISCIPLINE,COEFF_TEST,COEFF_CC,RESP,CODEPERE) values ('PPNINFO','PROGRAMME DUT INFO',null,null,null,null,null,null,null,null,null);
 Insert into MODULE (CODE,LIBELLE,H_COURS_PREV,H_COURS_REA,H_TP_PREV,H_TP_REA,DISCIPLINE,COEFF_TEST,COEFF_CC,RESP,CODEPERE) values ('PINFO2','INFORMATIQUE 2EME ANNEE',null,null,null,null,'INFORMATIQUE',null,null,null,'PPNINFO');
 Insert into MODULE (CODE,LIBELLE,H_COURS_PREV,H_COURS_REA,H_TP_PREV,H_TP_REA,DISCIPLINE,COEFF_TEST,COEFF_CC,RESP,CODEPERE) values ('PINFO1','INFORMATIQUE 1ERE ANNEE',null,null,null,null,'INFORMATIQUE',null,null,null,'PPNINFO');
@@ -242,15 +246,15 @@ Insert into MODULE (CODE,LIBELLE,H_COURS_PREV,H_COURS_REA,H_TP_PREV,H_TP_REA,DIS
 Insert into MODULE (CODE,LIBELLE,H_COURS_PREV,H_COURS_REA,H_TP_PREV,H_TP_REA,DISCIPLINE,COEFF_TEST,COEFF_CC,RESP,CODEPERE) values ('RO','RECHERCHE OPERATIONNELLE',20,null,25,null,'MATHS',50,50,null,'MATH2');
 Insert into MODULE (CODE,LIBELLE,H_COURS_PREV,H_COURS_REA,H_TP_PREV,H_TP_REA,DISCIPLINE,COEFF_TEST,COEFF_CC,RESP,CODEPERE) values ('BD','BASES DE DONNEES',20,null,60,null,'INFORMATIQUE',60,40,3,'OMGL2');
 
---
+---------------------------------------------------
 --   END DATA FOR TABLE MODULE
---
+---------------------------------------------------
 
---
+---------------------------------------------------
 --   DATA FOR TABLE NOTATION
 --   FILTER = none used
---
--- PROMPT Inserting into NOTATION
+---------------------------------------------------
+PROMPT Inserting into NOTATION
 Insert into NOTATION (NUM_ET,CODE,MOY_CC,MOY_TEST) values (2406,'ACSI',11,15);
 Insert into NOTATION (NUM_ET,CODE,MOY_CC,MOY_TEST) values (2404,'ACSI',10,13);
 Insert into NOTATION (NUM_ET,CODE,MOY_CC,MOY_TEST) values (2401,'ACSI',8,12);
@@ -331,15 +335,15 @@ Insert into NOTATION (NUM_ET,CODE,MOY_CC,MOY_TEST) values (2202,'BD',17,null);
 Insert into NOTATION (NUM_ET,CODE,MOY_CC,MOY_TEST) values (2207,'BD',13,12);
 Insert into NOTATION (NUM_ET,CODE,MOY_CC,MOY_TEST) values (2209,'BD',6,null);
 
---
+---------------------------------------------------
 --   END DATA FOR TABLE NOTATION
---
+---------------------------------------------------
 
---
+---------------------------------------------------
 --   DATA FOR TABLE PROF
 --   FILTER = none used
---
--- PROMPT Inserting into PROF
+---------------------------------------------------
+PROMPT Inserting into PROF
 Insert into PROF (NUM_PROF,NOM_PROF,PRENOM_PROF,ADR_PROF,CP_PROF,VILLE_PROF,MAT_SPEC) values (1,'BOITARD','DIDIER',null,null,'AIX-EN-PROVENCE','ACSI');
 Insert into PROF (NUM_PROF,NOM_PROF,PRENOM_PROF,ADR_PROF,CP_PROF,VILLE_PROF,MAT_SPEC) values (2,'FAURE','BERNARD',null,null,'AIX-EN-PROVENCE','ACSI');
 Insert into PROF (NUM_PROF,NOM_PROF,PRENOM_PROF,ADR_PROF,CP_PROF,VILLE_PROF,MAT_SPEC) values (3,'CICCHETTI','ROSINE',null,null,'AIX-EN-PROVENCE','BD');
@@ -358,15 +362,15 @@ Insert into PROF (NUM_PROF,NOM_PROF,PRENOM_PROF,ADR_PROF,CP_PROF,VILLE_PROF,MAT_
 Insert into PROF (NUM_PROF,NOM_PROF,PRENOM_PROF,ADR_PROF,CP_PROF,VILLE_PROF,MAT_SPEC) values (16,'BONHOMME','CHRISTIAN',null,null,'MARSEILLE','BD');
 Insert into PROF (NUM_PROF,NOM_PROF,PRENOM_PROF,ADR_PROF,CP_PROF,VILLE_PROF,MAT_SPEC) values (17,'SUN','PIERRE',null,null,'MARSEILLE','ACSI');
 
---
+---------------------------------------------------
 --   END DATA FOR TABLE PROF
---
+---------------------------------------------------
 
---
+---------------------------------------------------
 --   DATA FOR TABLE ETUDIANT
 --   FILTER = none used
---
--- PROMPT Inserting into ETUDIANT
+---------------------------------------------------
+PROMPT Inserting into ETUDIANT
 Insert into ETUDIANT (NUM_ET,NOM_ET,PRENOM_ET,CP_ET,VILLE_ET,ANNEE,GROUPE) values (2101,'ALARCON','LAURENT',null,null,2,1);
 Insert into ETUDIANT (NUM_ET,NOM_ET,PRENOM_ET,CP_ET,VILLE_ET,ANNEE,GROUPE) values (2102,'ARNAUD','EMMANUEL',null,'AIX-EN-PROVENCE',2,1);
 Insert into ETUDIANT (NUM_ET,NOM_ET,PRENOM_ET,CP_ET,VILLE_ET,ANNEE,GROUPE) values (2103,'BALESTRIERI','KARINE',null,'MARIGNANE',2,1);
@@ -424,3 +428,116 @@ Insert into ETUDIANT (NUM_ET,NOM_ET,PRENOM_ET,CP_ET,VILLE_ET,ANNEE,GROUPE) value
 Insert into ETUDIANT (NUM_ET,NOM_ET,PRENOM_ET,CP_ET,VILLE_ET,ANNEE,GROUPE) values (1110,'DEFOSSEZ','GAEL',null,null,1,1);
 Insert into ETUDIANT (NUM_ET,NOM_ET,PRENOM_ET,CP_ET,VILLE_ET,ANNEE,GROUPE) values (1111,'DUMAS','BENJAMIN',null,null,1,1);
 
+---------------------------------------------------
+--   END DATA FOR TABLE ETUDIANT
+---------------------------------------------------
+
+
+PROMPT Activating Constraints on ETUDIANT
+ALTER TABLE "ETUDIANT" ADD CONSTRAINT "PK_ETUDIANT" PRIMARY KEY
+(
+  "NUM_ET"
+)
+ENABLE;
+
+PROMPT Activating Constraints on MODULE
+ALTER TABLE "MODULE" ADD CONSTRAINT "PK_MODULE" PRIMARY KEY
+(
+  "CODE"
+)
+ENABLE;
+
+ALTER TABLE "MODULE" ADD CONSTRAINT "FK_PROF_CODEPERE" FOREIGN KEY
+(
+  "CODEPERE"
+)
+REFERENCES "MODULE"
+(
+  "CODE"
+)
+ENABLE;
+
+PROMPT Activating Constraints on PROF
+ALTER TABLE "PROF" ADD CONSTRAINT "PK_PROF" PRIMARY KEY
+(
+  "NUM_PROF"
+)
+ENABLE;
+
+
+ALTER TABLE "PROF" ADD CONSTRAINT "FK_PROF_MAT_SPEC" FOREIGN KEY
+(
+  "MAT_SPEC"
+)
+REFERENCES "MODULE"
+(
+  "CODE"
+)
+ENABLE;
+
+PROMPT Activating Constraints on ENSEIGNT
+ALTER TABLE "ENSEIGNT" ADD CONSTRAINT "PK_ENSEIGNT" PRIMARY KEY
+(
+  "CODE", "NUM_PROF", "NUM_ET"
+)
+ENABLE;
+
+ALTER TABLE "ENSEIGNT" ADD CONSTRAINT "FK_ENSEIGNT_CODE" FOREIGN KEY
+(
+  "CODE"
+)
+REFERENCES "MODULE"
+(
+  "CODE"
+)
+ENABLE;
+
+ALTER TABLE "ENSEIGNT" ADD CONSTRAINT "FK_ENSEIGNT_NUM_PROF" FOREIGN KEY
+(
+  "NUM_PROF"
+)
+REFERENCES "PROF"
+(
+  "NUM_PROF"
+)
+ENABLE;
+
+ALTER TABLE "ENSEIGNT" ADD CONSTRAINT "FK_ENSEIGNT_NUM_ET" FOREIGN KEY
+(
+  "NUM_ET"
+)
+REFERENCES "ETUDIANT"
+(
+  "NUM_ET"
+)
+ENABLE;
+
+PROMPT Activating Constraints on NOTATION
+
+ALTER TABLE "NOTATION" ADD CONSTRAINT "PK_NOTATION" PRIMARY KEY
+(
+  "NUM_ET", "CODE"
+)
+ENABLE;
+
+ALTER TABLE "NOTATION" ADD CONSTRAINT "FK_NOTATION_CODE" FOREIGN KEY
+(
+  "CODE"
+)
+REFERENCES "MODULE"
+(
+  "CODE"
+)
+ENABLE;
+
+ALTER TABLE "NOTATION" ADD CONSTRAINT "FK_NOTATION_NUM_ET" FOREIGN KEY
+(
+  "NUM_ET"
+)
+REFERENCES "ETUDIANT"
+(
+  "NUM_ET"
+)
+ENABLE;
+
+EXIT;
